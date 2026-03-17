@@ -1,6 +1,6 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { Ambulance, ArrowRight, BookOpen, Database, GitBranch, Github, Layers, Scale, Server, Shield, ShoppingCart, Vote, Wallet, X } from "lucide-react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Github, ShoppingCart, Vote, X, GitBranch, Database, Shield, Server, ArrowRight, Ambulance, Scale, Layers, BookOpen, Wallet } from "lucide-react";
 
 const projects = [
   {
@@ -11,7 +11,7 @@ const projects = [
     icon: <Ambulance size={20} />,
     accent: "from-[hsl(0_80%_55%/0.2)] to-[hsl(0_80%_55%/0.05)]",
     span: "md:col-span-2 md:row-span-2",
-    link: "https://github.com/vaibhavidhenge23",
+    link: "https://github.com/vaibhavidhenge23/Emergency-alert-system",
     problem: "India's emergency response suffers from 15–20 minute average ambulance delays due to manual coordination, no real-time tracking, and fragmented communication between hospitals and drivers.",
     solution: "A distributed Spring Boot Microservices system with Kafka for async event processing, WebSocket for live ambulance tracking, and Google Maps routing to automate the full emergency coordination pipeline.",
     metrics: [
@@ -69,14 +69,14 @@ const projects = [
     ],
   },
   {
-    title: "Daily Ink",
-    subtitle: "Daily Journaling SPA · React · Frontend",
-    shortDesc: "A minimalist, high-performance daily journaling and writing SPA — type-safe, blazing fast with Vite, and styled with Tailwind CSS and shadcn/ui components.",
+    title: "Ink-Well",
+    subtitle: "Read what matters Every sigle day · React · Frontend",
+    shortDesc: "A minimalist, high-performance daily Article reading platform — type-safe, blazing fast with Vite, and styled with Tailwind CSS and shadcn/ui components.",
     tags: ["React", "Vite", "Tailwind CSS", "shadcn/ui"],
     icon: <BookOpen size={20} />,
     accent: "from-[hsl(142_70%_45%/0.15)] to-[hsl(142_70%_45%/0.05)]",
     span: "md:col-span-1",
-    link: "https://github.com/vaibhavidhenge23/daily-ink",
+    link: "https://github.com/vaibhavidhenge23/Ink-well",
     problem: "Existing journaling tools are bloated and distracting — writers need a clean, fast, distraction-free digital workspace that stays out of the way.",
     solution: "A fully type-safe React SPA built with Vite for blazing fast HMR, Tailwind CSS for utility-first styling, and shadcn/ui for accessible, customizable components.",
     metrics: [
