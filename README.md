@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+A sleek, task-oriented professional portfolio designed to showcase high-impact software engineering projects and technical expertise.
 
-## Project info
+![License](https://img.shields.io/github/license/vaibhavidhenge23/Portfolio-main?style=flat-square)
+![Stars](https://img.shields.io/github/stars/vaibhavidhenge23/Portfolio-main?style=flat-square)
+![Issues](https://img.shields.io/github/issues/vaibhavidhenge23/Portfolio-main?style=flat-square)
+![Pull Requests](https://img.shields.io/github/issues-pr/vaibhavidhenge23/Portfolio-main?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/vaibhavidhenge23/Portfolio-main?style=flat-square)
+![Repo Size](https://img.shields.io/github/repo-size/vaibhavidhenge23/Portfolio-main?style=flat-square)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🚀 Overview
 
-There are several ways of editing your application.
+This project is a modern personal portfolio designed for software engineers. It provides a unified, high-performance interface to present technical skills, professional experience, and full-stack applications. The UI is intentionally clean and utility-focused, ensuring that your technical work remains the primary focus for recruiters and collaborators.
 
-**Use Lovable**
+## ✨ Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Project Gallery:** Dynamic rendering of development projects with category filtering.
+- **Responsive Architecture:** Fully optimized for mobile, tablet, and desktop viewing.
+- **Type-Safe Development:** Built entirely with TypeScript to ensure robust code quality.
+- **Performance Optimized:** Leverages React's component-based lifecycle for fast load times.
+- **Task-Oriented UI:** A professional design aesthetic prioritizing information density and clarity.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Tech Stack
 
-**Use your preferred IDE**
+| Category | Technology |
+| :--- | :--- |
+| **Frontend** | React.js (Hooks, Context) |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS |
+| **Deployment** | Vercel |
+| **Routing** | React Router |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏗 Architecture
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The system follows a modular component-based architecture. State is managed locally within components or via React Context where global data is required.
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```mermaid
+graph TD
+    A[App.tsx] --> B[Navbar]
+    A --> C[Main Content]
+    C --> D[Home/Hero]
+    C --> E[Project Grid]
+    C --> F[Skills Section]
+    E --> G[Project Card Components]
+    A --> H[Footer]
+📂 Project StructurePlaintext├── public/              # Static assets (icons, images)
+├── src/
+│   ├── components/      # Reusable UI elements (Buttons, Cards, Nav)
+│   ├── pages/           # Main view components (Home, Projects, About)
+│   ├── assets/          # Global styles and branding images
+│   ├── hooks/           # Custom React hooks
+│   ├── App.tsx          # Main entry point and routing
+│   └── index.tsx        # DOM rendering
+├── tailwind.config.js   # Style configurations
+└── tsconfig.json        # TypeScript compiler settings
+⚙️ InstallationTo set up the project locally:Clone the repository:Bashgit clone [https://github.com/vaibhavidhenge23/Portfolio-main.git](https://github.com/vaibhavidhenge23/Portfolio-main.git)
+cd Portfolio-main
+Install dependencies:Bashnpm install
+Start the development server:Bashnpm start
+🖥 UsageAfter starting the development server, the application will be available at http://localhost:3000. You can modify the project data in the components to reflect your own professional history.🌐 ConfigurationEnsure the following environment variables are set if using contact forms or external APIs:VariableDescriptionREACT_APP_API_URL(Optional) URL for backend servicesNODE_ENVSet to production for deployment📸 Demo(Add screenshots of your Portfolio home page and Project section here)🤝 ContributingContributions are welcome!Fork the project.Create your Feature Branch (git checkout -b feature/AmazingFeature).Commit your changes (git commit -m 'Add some AmazingFeature').Push to the Branch (git push origin feature/AmazingFeature).Open a Pull Request.🗺 Roadmap[ ] Transition to Next.js for Server-Side Rendering (SSR).[ ] Integration of a headless CMS for dynamic blog posts.[ ] Dark/Light mode toggle implementation.[ ] Enhanced animations using Framer Motion.📄 LicenseThis project is licensed under the MIT License.
