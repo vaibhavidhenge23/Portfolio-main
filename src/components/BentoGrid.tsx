@@ -1,58 +1,60 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { Ambulance, ArrowRight, BookOpen, Database, GitBranch, Github, Layers, Scale, Server, Shield, ShoppingCart, Vote, Wallet, X } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, ShoppingCart, Vote, X, GitBranch, Database, Shield, Server, ArrowRight, Ambulance, Scale, Layers, BookOpen, Wallet } from "lucide-react";
 
 const projects = [
   {
-    title: "Real-Time Emergency Response System",
-    subtitle: "Spring Boot Microservices · Kafka · WebSocket",
-    shortDesc: "Distributed emergency response system tackling India's 15–20 min ambulance delay crisis with live GPS tracking and automated coordination.",
-    tags: ["Spring Boot", "Microservices", "Kafka", "WebSocket", "Google Maps API"],
+    title: "Emergency Alert System",
+    subtitle: "Spring Boot Microservices · Eureka · API Gateway",
+    shortDesc: "Real-time emergency coordination platform solving India's 15–20 min ambulance delay — smart dispatch using Haversine GPS, hospital bed tracking, and instant SMS/email alerts.",
+    tags: ["Java 17", "Spring Boot", "Spring Cloud", "PostgreSQL", "React"],
     icon: <Ambulance size={20} />,
     accent: "from-[hsl(0_80%_55%/0.2)] to-[hsl(0_80%_55%/0.05)]",
     span: "md:col-span-2 md:row-span-2",
     link: "https://github.com/vaibhavidhenge23/Emergency-alert-system",
-    problem: "India's emergency response suffers from 15–20 minute average ambulance delays due to manual coordination, no real-time tracking, and fragmented communication between hospitals and drivers.",
-    solution: "A distributed Spring Boot Microservices system with Kafka for async event processing, WebSocket for live ambulance tracking, and Google Maps routing to automate the full emergency coordination pipeline.",
+    liveLink: null,
+    problem: "India's average ambulance response time is 15–20 minutes vs WHO's recommended 8–10 minutes. Manual coordination between dispatchers, ambulances, and hospitals causes critical delays in life-threatening emergencies.",
+    solution: "A distributed Spring Boot Microservices platform with Eureka service discovery, API Gateway routing, Haversine formula for nearest ambulance dispatch, real-time GPS tracking, hospital bed availability, and automated SMS/email notifications.",
     metrics: [
-      "Spring Boot Microservices architecture",
-      "Kafka-based async event processing",
-      "WebSocket live GPS ambulance tracking",
-      "Google Maps API for optimal routing",
-      "End-to-end automated emergency coordination",
+      "SOS trigger with auto nearest-ambulance dispatch (Haversine GPS)",
+      "Real-time hospital bed availability tracking",
+      "Role-based dashboards: Admin, Responder, Officer",
+      "Automated SMS/Email alerts on emergency events",
+      "5 independent microservices via Eureka + API Gateway",
+      "Incident logging with automated audit history",
     ],
     architecture: [
-      { label: "Emergency Call", color: "bg-[hsl(0_80%_55%/0.2)] text-[hsl(0_80%_65%)]" },
+      { label: "SOS Trigger", color: "bg-[hsl(0_80%_55%/0.2)] text-[hsl(0_80%_65%)]" },
       { label: "→", color: "text-muted-foreground" },
-      { label: "API Gateway", color: "bg-primary/20 text-primary" },
+      { label: "API Gateway :8080", color: "bg-primary/20 text-primary" },
       { label: "→", color: "text-muted-foreground" },
-      { label: "Kafka Queue", color: "bg-[hsl(45_90%_55%/0.2)] text-[hsl(45_90%_60%)]" },
+      { label: "Emergency :8081", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
+      { label: "Resource :8082", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
+      { label: "Hospital :8083", color: "bg-[hsl(45_90%_55%/0.2)] text-[hsl(45_90%_60%)]" },
+      { label: "Notify :8085", color: "bg-[hsl(30_90%_55%/0.2)] text-[hsl(30_90%_60%)]" },
       { label: "→", color: "text-muted-foreground" },
-      { label: "Dispatch Service", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
-      { label: "→", color: "text-muted-foreground" },
-      { label: "WebSocket Track", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
-      { label: "→", color: "text-muted-foreground" },
-      { label: "Google Maps", color: "bg-[hsl(170_70%_45%/0.2)] text-[hsl(170_70%_60%)]" },
+      { label: "PostgreSQL", color: "bg-[hsl(170_70%_45%/0.2)] text-[hsl(170_70%_60%)]" },
     ],
   },
   {
     title: "CourtAlert",
     subtitle: "Real-Time Court Hearing Tracker · AI Legal Assistant",
-    shortDesc: "Microservices platform for tracking CNR cases across District & Supreme Courts with predictive hearing ETAs, verified advocate search, and multilingual AI legal document summarization.",
+    shortDesc: "Microservices platform tracking CNR cases across District & Supreme Courts with predictive hearing ETAs, verified advocate search, and multilingual AI legal document summarization.",
     tags: ["Node.js", "Express.js", "MongoDB", "React", "JWT", "Microservices"],
     icon: <Scale size={20} />,
     accent: "from-[hsl(280_80%_50%/0.15)] to-[hsl(280_80%_50%/0.05)]",
     span: "md:col-span-1 md:row-span-2",
     link: "https://github.com/vaibhavidhenge23/court-alert",
+    liveLink: null,
     problem: "Navigating India's judicial system is opaque and time-consuming — 3.5 crore+ pending cases with no centralized real-time tracker accessible to advocates and litigants.",
-    solution: "A scalable microservices platform with an API Gateway routing 5 independent services — Auth, Case, Parser, Prediction, and Notification — backed by MongoDB, with a React dark-themed PWA and multilingual AI document summarization (EN/HI/MR).",
+    solution: "A scalable microservices backend with API Gateway routing 5 independent Node.js/Express services — Auth, Case, Parser, Prediction, Notification — backed by MongoDB, JWT auth with Bcrypt, and a React dark PWA with multilingual AI document summarization (EN/HI/MR).",
     metrics: [
       "CNR case tracking across District & Supreme Courts",
       "Predictive hearing ETA algorithm",
       "AI doc summarization in English, Hindi & Marathi",
       "Verified advocate directory (Bar Council cross-ref)",
       "API Gateway routing 5 microservices (:3001–:3005)",
-      "JWT auth with Bcrypt password security",
+      "JWT auth + Bcrypt password security",
     ],
     architecture: [
       { label: "React PWA", color: "bg-primary/20 text-primary" },
@@ -69,76 +71,83 @@ const projects = [
     ],
   },
   {
-    title: "Ink-Well",
-    subtitle: "Read what matters Every sigle day · React · Frontend",
-    shortDesc: "A minimalist, high-performance daily Article reading platform — type-safe, blazing fast with Vite, and styled with Tailwind CSS and shadcn/ui components.",
-    tags: ["React", "Vite", "Tailwind CSS", "shadcn/ui"],
+    title: "Ink-well",
+    subtitle: "Live Article Reader · React · No Paywall",
+    shortDesc: "Fully client-side article reading app aggregating live content from Dev.to & Hacker News — 13 reading themes, AI-style personalization, bookmarks, and reading stats. No backend, no paywall.",
+    tags: ["React", "Vite", "Tailwind CSS", "Dev.to API", "Hacker News API"],
     icon: <BookOpen size={20} />,
     accent: "from-[hsl(142_70%_45%/0.15)] to-[hsl(142_70%_45%/0.05)]",
     span: "md:col-span-1",
     link: "https://github.com/vaibhavidhenge23/Ink-well",
-    problem: "Existing journaling tools are bloated and distracting — writers need a clean, fast, distraction-free digital workspace that stays out of the way.",
-    solution: "A fully type-safe React SPA built with Vite for blazing fast HMR, Tailwind CSS for utility-first styling, and shadcn/ui for accessible, customizable components.",
+    liveLink: "https://ink-well-vaibhavi-dhenge.vercel.app/",
+    problem: "Platforms like Medium gate quality content behind paywalls. Readers need a polished, distraction-free reading experience with real personalization — for free.",
+    solution: "A 100% static React SPA pulling live articles from Dev.to and Hacker News APIs, with interest-based personalization from reading history, 13 reading themes, bookmarks, and full reading stats — all stored in localStorage with zero backend.",
     metrics: [
-      "100% TypeScript — strict type-safe codebase",
-      "React 18 component-driven architecture",
-      "Vite for instant HMR and optimized builds",
-      "shadcn/ui for accessible UI components",
-      "Responsive across all screen sizes",
+      "Live article feed from Dev.to API + Hacker News",
+      "Interest-based personalization from reading behavior",
+      "13 reading themes (Light, Dark, Focus variants)",
+      "Bookmarks, reading stats & badge system",
+      "Infinite scroll with sessionStorage caching",
+      "100% static — no backend, no auth server needed",
     ],
     architecture: [
-      { label: "index.html", color: "bg-primary/20 text-primary" },
+      { label: "React SPA", color: "bg-primary/20 text-primary" },
       { label: "→", color: "text-muted-foreground" },
-      { label: "Vite Bundler", color: "bg-[hsl(45_90%_55%/0.2)] text-[hsl(45_90%_60%)]" },
+      { label: "Dev.to API", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
+      { label: "HN API", color: "bg-[hsl(45_90%_55%/0.2)] text-[hsl(45_90%_60%)]" },
       { label: "→", color: "text-muted-foreground" },
-      { label: "React DOM", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
-      { label: "→", color: "text-muted-foreground" },
-      { label: "shadcn/ui", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
-      { label: "+", color: "text-muted-foreground" },
-      { label: "Tailwind CSS", color: "bg-[hsl(170_70%_45%/0.2)] text-[hsl(170_70%_60%)]" },
+      { label: "localStorage", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
     ],
   },
   {
     title: "Expense Tracker",
-    subtitle: "Full-Stack Finance App · React · Node.js",
-    shortDesc: "Personal expense tracking app with income/expense logging, category breakdowns, and financial summaries — full-stack with REST API backend.",
-    tags: ["React", "Node.js", "Express.js", "MongoDB"],
+    subtitle: "Full-Stack Finance App · Express · PostgreSQL",
+    shortDesc: "Full-stack budgeting app with secure Passport.js auth, interactive recharts visualizations, Drizzle ORM + PostgreSQL, and type-safe form validation with Zod.",
+    tags: ["React", "Express.js", "PostgreSQL", "Drizzle ORM", "Passport.js"],
     icon: <Wallet size={20} />,
     accent: "from-[hsl(45_90%_55%/0.15)] to-[hsl(45_90%_55%/0.05)]",
     span: "md:col-span-1",
-    link: "https://github.com/vaibhavidhenge23",
-    problem: "Tracking personal finances manually is error-prone — needed a simple full-stack tool to log, categorize and visualize expenses.",
-    solution: "A full-stack expense tracker with React frontend, Node.js/Express REST API backend, and MongoDB for persistent storage across sessions.",
+    link: "https://github.com/vaibhavidhenge23/Expense-tracker-MERN-",
+    liveLink: null,
+    problem: "Managing personal finances manually is error-prone and time-consuming — needed a full-stack tool to log, categorize, and visualize expenses with secure authentication.",
+    solution: "A full-stack app with React 18 + Vite frontend, Express.js backend, PostgreSQL via Drizzle ORM for type-safe queries, Passport.js session auth, recharts for spending visualizations, and Zod for schema validation.",
     metrics: [
-      "Income & expense entry management",
-      "Category-wise breakdown & summaries",
-      "REST API backend with Express.js",
-      "MongoDB for persistent data storage",
+      "Secure auth with Passport.js + session management",
+      "Add, edit, categorize & delete transactions",
+      "Interactive charts with recharts (spending trends)",
+      "Type-safe DB queries with Drizzle ORM + PostgreSQL",
+      "Schema validation with Zod + React Hook Form",
+      "React Query for server state management",
     ],
     architecture: [
-      { label: "React UI", color: "bg-primary/20 text-primary" },
+      { label: "React + Vite", color: "bg-primary/20 text-primary" },
       { label: "→", color: "text-muted-foreground" },
-      { label: "Express API", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
+      { label: "Express.js", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
       { label: "→", color: "text-muted-foreground" },
-      { label: "MongoDB", color: "bg-[hsl(30_90%_55%/0.2)] text-[hsl(30_90%_60%)]" },
+      { label: "Passport.js Auth", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
+      { label: "→", color: "text-muted-foreground" },
+      { label: "Drizzle ORM", color: "bg-[hsl(30_90%_55%/0.2)] text-[hsl(30_90%_60%)]" },
+      { label: "→", color: "text-muted-foreground" },
+      { label: "PostgreSQL", color: "bg-[hsl(170_70%_45%/0.2)] text-[hsl(170_70%_60%)]" },
     ],
   },
   {
     title: "E-Commerce Web Application",
     subtitle: "Spring Boot · PostgreSQL · JWT",
-    shortDesc: "Scalable e-commerce platform with product, cart and order modules, secure JWT auth, and clean layered Spring Boot architecture.",
+    shortDesc: "Scalable e-commerce platform with product, cart and order modules, secure JWT auth, and clean layered Spring Boot architecture backed by PostgreSQL.",
     tags: ["Spring Boot", "PostgreSQL", "JPA/Hibernate", "JWT"],
     icon: <ShoppingCart size={20} />,
     accent: "from-[hsl(170_70%_45%/0.15)] to-[hsl(170_70%_45%/0.05)]",
     span: "md:col-span-1",
     link: "https://github.com/vaibhavidhenge23/E-Commerce-micro-Services-",
+    liveLink: null,
     problem: "Need for a reliable backend handling products, carts, orders and user auth without tight coupling between modules.",
     solution: "Clean layered Spring Boot architecture with domain-driven modules, JWT security, and JPA/Hibernate ORM backed by PostgreSQL.",
     metrics: [
       "Modules: Products, Cart, Orders, Auth",
-      "JWT-based login & role-based access",
+      "JWT-based login & role-based access control",
       "JPA/Hibernate ORM with PostgreSQL",
-      "REST APIs with clean layered design",
+      "Clean layered REST API design",
     ],
     architecture: [
       { label: "Client", color: "bg-primary/20 text-primary" },
@@ -161,8 +170,9 @@ const projects = [
     accent: "from-[hsl(212_100%_48%/0.15)] to-[hsl(212_100%_48%/0.05)]",
     span: "md:col-span-1",
     link: "https://github.com/vaibhavidhenge23/Voting-application",
+    liveLink: null,
     problem: "Campus voting was manual and prone to fraud — needed a verifiable, tamper-proof digital system.",
-    solution: "Node.js/Express.js backend with Aadhaar verification, server-side vote deduplication, and admin control panel with live results.",
+    solution: "Node.js/Express.js backend with Aadhaar-based identity verification, server-side vote deduplication logic, and admin control panel with live results.",
     metrics: [
       "Aadhaar-based identity verification",
       "One user–one vote enforced server-side",
@@ -182,11 +192,11 @@ const projects = [
 ];
 
 const smallCards = [
-  { title: "Microservices", icon: <Layers size={16} />, desc: "API Gateway, service isolation, event-driven design", tags: ["Spring Boot", "Node.js", "Kafka"] },
+  { title: "Microservices", icon: <Layers size={16} />, desc: "Eureka discovery, API Gateway, service isolation", tags: ["Spring Cloud", "Node.js"] },
   { title: "REST API Design", icon: <Server size={16} />, desc: "Layered MVC, validation, error handling", tags: ["Spring Boot", "Express.js"] },
-  { title: "JWT Auth Systems", icon: <Shield size={16} />, desc: "Token generation, role-based access control", tags: ["Spring Security", "Node.js"] },
-  { title: "Database Design", icon: <Database size={16} />, desc: "JPA/Hibernate ORM, PostgreSQL, MongoDB", tags: ["PostgreSQL", "MongoDB"] },
-  { title: "Real-Time Systems", icon: <GitBranch size={16} />, desc: "WebSocket live tracking, async Kafka events", tags: ["WebSocket", "Kafka"] },
+  { title: "Auth & Security", icon: <Shield size={16} />, desc: "JWT, Passport.js, Bcrypt, session management", tags: ["Spring Security", "Passport.js"] },
+  { title: "Database Design", icon: <Database size={16} />, desc: "PostgreSQL, MongoDB, Drizzle ORM, JPA/Hibernate", tags: ["PostgreSQL", "MongoDB"] },
+  { title: "Real-Time Systems", icon: <GitBranch size={16} />, desc: "GPS dispatch, live tracking, async events", tags: ["WebSocket", "Haversine"] },
 ];
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
@@ -237,16 +247,29 @@ const BentoGrid = () => {
                       <p className="text-xs text-muted-foreground">{project.subtitle}</p>
                     </div>
                   </div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                    title="View on GitHub"
-                  >
-                    <Github size={16} />
-                  </a>
+                  <div className="flex items-center gap-2">
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-xs font-mono px-2 py-0.5 rounded-full bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)] hover:bg-[hsl(142_70%_45%/0.3)] transition-colors"
+                      >
+                        Live ↗
+                      </a>
+                    )}
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      title="View on GitHub"
+                    >
+                      <Github size={16} />
+                    </a>
+                  </div>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed flex-1">{project.shortDesc}</p>
                 <div className="flex items-center justify-between">
@@ -264,7 +287,6 @@ const BentoGrid = () => {
           ))}
         </motion.div>
 
-        {/* Small skill cards */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -284,7 +306,6 @@ const BentoGrid = () => {
         </motion.div>
       </div>
 
-      {/* Case Study Modal */}
       <AnimatePresence>
         {activeProject && (
           <motion.div
@@ -305,7 +326,6 @@ const BentoGrid = () => {
               <button onClick={() => setActiveProject(null)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
                 <X size={20} />
               </button>
-
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                   {activeProject.icon}
@@ -315,7 +335,6 @@ const BentoGrid = () => {
                   <p className="text-sm text-muted-foreground">{activeProject.subtitle}</p>
                 </div>
               </div>
-
               <div className="space-y-6">
                 <div>
                   <span className="font-mono text-xs text-primary tracking-widest uppercase">Problem</span>
@@ -351,15 +370,27 @@ const BentoGrid = () => {
                     <span key={tag} className="px-3 py-1 text-xs rounded-md bg-secondary text-secondary-foreground font-mono">{tag}</span>
                   ))}
                 </div>
-                <a
-                  href={activeProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
-                >
-                  <Github size={15} />
-                  View on GitHub
-                </a>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href={activeProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+                  >
+                    <Github size={15} />
+                    View on GitHub
+                  </a>
+                  {activeProject.liveLink && (
+                    <a
+                      href={activeProject.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[hsl(142_70%_45%/0.4)] text-[hsl(142_70%_60%)] text-sm font-medium hover:bg-[hsl(142_70%_45%/0.1)] transition-colors"
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           </motion.div>

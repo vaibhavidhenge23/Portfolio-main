@@ -4,44 +4,37 @@ const categories = [
   {
     label: "Backend Core",
     description: "Primary expertise",
-    techs: ["Java", "Spring Boot", "Spring", "Node.js", "Express.js", "Next.js"],
+    techs: ["Java 17", "Spring Boot", "Spring Cloud", "Node.js", "Express.js", "Next.js"],
     color: "bg-[hsl(142_70%_45%/0.15)] text-[hsl(142_70%_60%)]",
   },
   {
     label: "Architecture",
     description: "Distributed systems",
-    techs: ["Microservices", "Kafka", "WebSocket", "API Gateway", "REST APIs", "JWT Auth"],
+    techs: ["Microservices", "Eureka", "API Gateway", "REST APIs", "JWT Auth", "Passport.js"],
     color: "bg-[hsl(0_80%_55%/0.15)] text-[hsl(0_80%_65%)]",
   },
   {
     label: "Frontend",
     description: "UI & Styling",
-    techs: ["React", "HTML5", "CSS3", "Tailwind CSS"],
+    techs: ["React 18", "Vite", "Tailwind CSS", "Framer Motion", "shadcn/ui", "HTML5"],
     color: "bg-primary/15 text-primary",
   },
   {
     label: "Database & ORM",
     description: "Data layer",
-    techs: ["PostgreSQL", "MongoDB", "JPA/Hibernate", "SQL"],
+    techs: ["PostgreSQL", "MongoDB", "JPA/Hibernate", "Drizzle ORM", "Mongoose"],
     color: "bg-[hsl(280_80%_50%/0.15)] text-[hsl(280_80%_65%)]",
   },
   {
-    label: "Dev Tools",
-    description: "Workflow",
-    techs: ["GitHub", "Postman", "Agile/Scrum", "Computer Networks"],
+    label: "Tools & Validation",
+    description: "Dev workflow",
+    techs: ["GitHub", "Maven", "Zod", "React Query", "Postman", "Agile/Scrum"],
     color: "bg-[hsl(30_90%_55%/0.15)] text-[hsl(30_90%_60%)]",
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.15 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+const container = { hidden: {}, show: { transition: { staggerChildren: 0.15 } } };
+const item = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
 const TechStack = () => {
   return (
@@ -78,10 +71,7 @@ const TechStack = () => {
               <p className="text-xs text-muted-foreground mb-5">{cat.description}</p>
               <div className="flex flex-wrap gap-2">
                 {cat.techs.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1.5 text-xs rounded-md bg-secondary text-secondary-foreground font-mono hover:bg-secondary/80 transition-colors cursor-default"
-                  >
+                  <span key={tech} className="px-3 py-1.5 text-xs rounded-md bg-secondary text-secondary-foreground font-mono hover:bg-secondary/80 transition-colors cursor-default">
                     {tech}
                   </span>
                 ))}

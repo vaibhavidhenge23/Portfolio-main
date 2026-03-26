@@ -19,8 +19,7 @@ const Index = () => {
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6 text-center">
           <p className="text-xs text-muted-foreground font-mono">
-            © 2025 Vaibhavi Dhenge · Backend Developer &nbsp;|&nbsp; Java, Spring Boot, PostgreSQL &amp; Node.js
-          </p>
+            © 2025 Vaibhavi Dhenge · Backend Developer &nbsp;|&nbsp; Java, Spring Boot, PostgreSQL &amp; Node.js</p>
         </div>
       </footer>
     </div>
