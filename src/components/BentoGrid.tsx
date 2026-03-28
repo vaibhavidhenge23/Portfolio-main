@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ShoppingCart, Vote, X, GitBranch, Database, Shield, Server, ArrowRight, Ambulance, Scale, Layers, BookOpen, Wallet } from "lucide-react";
+import { Github, ShoppingCart, Vote, X, GitBranch, Database, Shield, Server, ArrowRight, Ambulance, Scale, Layers, BookOpen, Wallet, FileText, Calculator } from "lucide-react";
 
 const projects = [
   {
@@ -47,7 +47,7 @@ const projects = [
     link: "https://github.com/vaibhavidhenge23/court-alert",
     liveLink: null,
     problem: "Navigating India's judicial system is opaque and time-consuming — 3.5 crore+ pending cases with no centralized real-time tracker accessible to advocates and litigants.",
-    solution: "A scalable microservices backend with API Gateway routing 5 independent Node.js/Express services — Auth, Case, Parser, Prediction, Notification — backed by MongoDB, JWT auth with Bcrypt, and a React dark PWA with multilingual AI document summarization (EN/HI/MR).",
+    solution: "A scalable microservices backend with API Gateway routing 5 independent Node.js/Express services backed by MongoDB, JWT + Bcrypt auth, and a React dark PWA with multilingual AI document summarization (EN/HI/MR).",
     metrics: [
       "CNR case tracking across District & Supreme Courts",
       "Predictive hearing ETA algorithm",
@@ -71,17 +71,81 @@ const projects = [
     ],
   },
   {
+    title: "GST Reconciliation & Tax Filing",
+    subtitle: "Fintech · Microservices · Rule Engine · PDF Parsing",
+    shortDesc: "Auto-reconcile purchases vs sales, detect GST mismatches, parse PDF invoices, and generate ITR-ready compliance reports — solving India's CA-dependency for small businesses.",
+    tags: ["Spring Boot", "Microservices", "PostgreSQL", "React", "PDF Parsing"],
+    icon: <FileText size={20} />,
+    accent: "from-[hsl(45_90%_55%/0.2)] to-[hsl(45_90%_55%/0.05)]",
+    span: "md:col-span-2",
+    link: "https://github.com/vaibhavidhenge23",
+    liveLink: null,
+    problem: "Small businesses in India must hire a CA just for GST filing — expensive, slow, and error-prone. Manual reconciliation of purchase vs sales invoices leads to compliance penalties and audit risks.",
+    solution: "A microservices fintech platform with 5 services — Invoice, Reconciliation, Tax-Calculator, Report, and Compliance-Alert — featuring PDF invoice parsing, a rule engine for mismatch detection, and automated ITR-ready report generation.",
+    metrics: [
+      "Auto-reconcile purchases vs sales invoices",
+      "PDF invoice parsing for data extraction",
+      "Rule engine for GST mismatch detection",
+      "ITR-ready compliance report generation",
+      "Compliance-Alert service for deadline reminders",
+      "Targets every Indian small business — massive market",
+    ],
+    architecture: [
+      { label: "React Dashboard", color: "bg-primary/20 text-primary" },
+      { label: "→", color: "text-muted-foreground" },
+      { label: "API Gateway", color: "bg-[hsl(45_90%_55%/0.2)] text-[hsl(45_90%_60%)]" },
+      { label: "→", color: "text-muted-foreground" },
+      { label: "Invoice Service", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
+      { label: "Reconciliation", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
+      { label: "Tax-Calculator", color: "bg-[hsl(0_80%_55%/0.2)] text-[hsl(0_80%_65%)]" },
+      { label: "Report", color: "bg-[hsl(30_90%_55%/0.2)] text-[hsl(30_90%_60%)]" },
+      { label: "Compliance-Alert", color: "bg-[hsl(170_70%_45%/0.2)] text-[hsl(170_70%_60%)]" },
+      { label: "→", color: "text-muted-foreground" },
+      { label: "PostgreSQL", color: "bg-[hsl(170_70%_45%/0.2)] text-[hsl(170_70%_60%)]" },
+    ],
+  },
+  {
+    title: "ITR Filing App",
+    subtitle: "Fintech · Tax Engine · ITR-1 & ITR-4 · PDF Reports",
+    shortDesc: "Full-stack ITR filing app supporting ITR-1 (salaried) and ITR-4 (freelancer/business) with live tax calculation, 80C/80D deductions, TDS records, and PDF-ready tax reports.",
+    tags: ["React", "Node.js", "Express.js", "PostgreSQL", "Tax Engine"],
+    icon: <Calculator size={20} />,
+    accent: "from-[hsl(212_100%_48%/0.15)] to-[hsl(212_100%_48%/0.05)]",
+    span: "md:col-span-1",
+    link: "https://github.com/vaibhavidhenge23",
+    liveLink: null,
+    problem: "Filing ITR in India is complex — salaried individuals and freelancers both struggle with income declarations, deduction calculations, TDS reconciliation, and understanding their final tax liability.",
+    solution: "A full-stack ITR app with a live tax engine supporting ITR-1 (salaried) and ITR-4 (freelancer/business), covering income sources, 80C/80D investments, TDS records, real-time tax slab computation, and PDF-ready final reports.",
+    metrics: [
+      "ITR-1 (salary + house + interest) & ITR-4 (business)",
+      "Live tax calculator with Old/New regime slabs",
+      "80C (₹1.5L), 80D (₹25K), standard deduction (₹75K)",
+      "TDS records from employer & bank",
+      "Dashboard: tax summary + payable amount",
+      "PDF-ready ITR summary report generation",
+    ],
+    architecture: [
+      { label: "React Dashboard", color: "bg-primary/20 text-primary" },
+      { label: "→", color: "text-muted-foreground" },
+      { label: "Express API", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
+      { label: "→", color: "text-muted-foreground" },
+      { label: "Tax Engine", color: "bg-[hsl(45_90%_55%/0.2)] text-[hsl(45_90%_60%)]" },
+      { label: "→", color: "text-muted-foreground" },
+      { label: "PostgreSQL", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
+    ],
+  },
+  {
     title: "Ink-well",
     subtitle: "Live Article Reader · React · No Paywall",
-    shortDesc: "Fully client-side article reading app aggregating live content from Dev.to & Hacker News — 13 reading themes, AI-style personalization, bookmarks, and reading stats. No backend, no paywall.",
-    tags: ["React", "Vite", "Tailwind CSS", "Dev.to API", "Hacker News API"],
+    shortDesc: "Fully client-side article reading app aggregating live content from Dev.to & Hacker News — 13 reading themes, personalization, bookmarks, and reading stats. No backend, no paywall.",
+    tags: ["React", "Vite", "Tailwind CSS", "Dev.to API", "HN API"],
     icon: <BookOpen size={20} />,
     accent: "from-[hsl(142_70%_45%/0.15)] to-[hsl(142_70%_45%/0.05)]",
     span: "md:col-span-1",
     link: "https://github.com/vaibhavidhenge23/Ink-well",
     liveLink: "https://ink-well-vaibhavi-dhenge.vercel.app/",
     problem: "Platforms like Medium gate quality content behind paywalls. Readers need a polished, distraction-free reading experience with real personalization — for free.",
-    solution: "A 100% static React SPA pulling live articles from Dev.to and Hacker News APIs, with interest-based personalization from reading history, 13 reading themes, bookmarks, and full reading stats — all stored in localStorage with zero backend.",
+    solution: "A 100% static React SPA pulling live articles from Dev.to and Hacker News APIs, with interest-based personalization, 13 reading themes, bookmarks, and full reading stats — all in localStorage, zero backend.",
     metrics: [
       "Live article feed from Dev.to API + Hacker News",
       "Interest-based personalization from reading behavior",
@@ -102,15 +166,15 @@ const projects = [
   {
     title: "Expense Tracker",
     subtitle: "Full-Stack Finance App · Express · PostgreSQL",
-    shortDesc: "Full-stack budgeting app with secure Passport.js auth, interactive recharts visualizations, Drizzle ORM + PostgreSQL, and type-safe form validation with Zod.",
+    shortDesc: "Full-stack budgeting app with Passport.js auth, recharts visualizations, Drizzle ORM + PostgreSQL, and type-safe Zod validation.",
     tags: ["React", "Express.js", "PostgreSQL", "Drizzle ORM", "Passport.js"],
     icon: <Wallet size={20} />,
-    accent: "from-[hsl(45_90%_55%/0.15)] to-[hsl(45_90%_55%/0.05)]",
+    accent: "from-[hsl(30_90%_55%/0.15)] to-[hsl(30_90%_55%/0.05)]",
     span: "md:col-span-1",
     link: "https://github.com/vaibhavidhenge23/Expense-tracker-MERN-",
     liveLink: null,
-    problem: "Managing personal finances manually is error-prone and time-consuming — needed a full-stack tool to log, categorize, and visualize expenses with secure authentication.",
-    solution: "A full-stack app with React 18 + Vite frontend, Express.js backend, PostgreSQL via Drizzle ORM for type-safe queries, Passport.js session auth, recharts for spending visualizations, and Zod for schema validation.",
+    problem: "Managing personal finances manually is error-prone — needed a full-stack tool to log, categorize, and visualize expenses with secure authentication.",
+    solution: "A full-stack app with React 18 + Vite frontend, Express.js backend, PostgreSQL via Drizzle ORM for type-safe queries, Passport.js session auth, recharts for spending visualizations, and Zod schema validation.",
     metrics: [
       "Secure auth with Passport.js + session management",
       "Add, edit, categorize & delete transactions",
@@ -124,7 +188,7 @@ const projects = [
       { label: "→", color: "text-muted-foreground" },
       { label: "Express.js", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
       { label: "→", color: "text-muted-foreground" },
-      { label: "Passport.js Auth", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
+      { label: "Passport.js", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
       { label: "→", color: "text-muted-foreground" },
       { label: "Drizzle ORM", color: "bg-[hsl(30_90%_55%/0.2)] text-[hsl(30_90%_60%)]" },
       { label: "→", color: "text-muted-foreground" },
@@ -134,7 +198,7 @@ const projects = [
   {
     title: "E-Commerce Web Application",
     subtitle: "Spring Boot · PostgreSQL · JWT",
-    shortDesc: "Scalable e-commerce platform with product, cart and order modules, secure JWT auth, and clean layered Spring Boot architecture backed by PostgreSQL.",
+    shortDesc: "Scalable e-commerce platform with product, cart and order modules, secure JWT auth, and clean layered Spring Boot architecture.",
     tags: ["Spring Boot", "PostgreSQL", "JPA/Hibernate", "JWT"],
     icon: <ShoppingCart size={20} />,
     accent: "from-[hsl(170_70%_45%/0.15)] to-[hsl(170_70%_45%/0.05)]",
@@ -172,7 +236,7 @@ const projects = [
     link: "https://github.com/vaibhavidhenge23/Voting-application",
     liveLink: null,
     problem: "Campus voting was manual and prone to fraud — needed a verifiable, tamper-proof digital system.",
-    solution: "Node.js/Express.js backend with Aadhaar-based identity verification, server-side vote deduplication logic, and admin control panel with live results.",
+    solution: "Node.js/Express.js backend with Aadhaar-based identity verification, server-side vote deduplication, and admin control panel with live results.",
     metrics: [
       "Aadhaar-based identity verification",
       "One user–one vote enforced server-side",
@@ -196,7 +260,7 @@ const smallCards = [
   { title: "REST API Design", icon: <Server size={16} />, desc: "Layered MVC, validation, error handling", tags: ["Spring Boot", "Express.js"] },
   { title: "Auth & Security", icon: <Shield size={16} />, desc: "JWT, Passport.js, Bcrypt, session management", tags: ["Spring Security", "Passport.js"] },
   { title: "Database Design", icon: <Database size={16} />, desc: "PostgreSQL, MongoDB, Drizzle ORM, JPA/Hibernate", tags: ["PostgreSQL", "MongoDB"] },
-  { title: "Real-Time Systems", icon: <GitBranch size={16} />, desc: "GPS dispatch, live tracking, async events", tags: ["WebSocket", "Haversine"] },
+  { title: "Fintech & Tax", icon: <Calculator size={16} />, desc: "GST reconciliation, ITR tax engine, rule engine", tags: ["Tax Logic", "PDF Parsing"] },
 ];
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
@@ -249,24 +313,13 @@ const BentoGrid = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     {project.liveLink && (
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-xs font-mono px-2 py-0.5 rounded-full bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)] hover:bg-[hsl(142_70%_45%/0.3)] transition-colors"
-                      >
+                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}
+                        className="text-xs font-mono px-2 py-0.5 rounded-full bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)] hover:bg-[hsl(142_70%_45%/0.3)] transition-colors">
                         Live ↗
                       </a>
                     )}
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      title="View on GitHub"
-                    >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}
+                      className="text-muted-foreground hover:text-primary transition-colors" title="View on GitHub">
                       <Github size={16} />
                     </a>
                   </div>
@@ -287,13 +340,7 @@ const BentoGrid = () => {
           ))}
         </motion.div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-5 gap-4"
-        >
+        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {smallCards.map((card) => (
             <motion.div key={card.title} variants={item} className="glass rounded-xl p-4 hover:glow-border transition-all duration-300">
               <div className="flex items-center gap-2 mb-2 text-primary">{card.icon}<span className="text-sm font-medium text-foreground">{card.title}</span></div>
@@ -308,28 +355,19 @@ const BentoGrid = () => {
 
       <AnimatePresence>
         {activeProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm"
-            onClick={() => setActiveProject(null)}
-          >
+            onClick={() => setActiveProject(null)}>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }} transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
-              className="glass-strong rounded-2xl p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto relative"
-            >
+              className="glass-strong rounded-2xl p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto relative">
               <button onClick={() => setActiveProject(null)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors">
                 <X size={20} />
               </button>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
-                  {activeProject.icon}
-                </div>
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">{activeProject.icon}</div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">{activeProject.title}</h3>
                   <p className="text-sm text-muted-foreground">{activeProject.subtitle}</p>
@@ -348,9 +386,7 @@ const BentoGrid = () => {
                   <span className="font-mono text-xs text-primary tracking-widest uppercase">Architecture</span>
                   <div className="mt-3 p-4 rounded-xl bg-secondary/50 flex flex-wrap items-center gap-2">
                     {activeProject.architecture.map((node, i) => (
-                      <span key={i} className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium ${node.color}`}>
-                        {node.label}
-                      </span>
+                      <span key={i} className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium ${node.color}`}>{node.label}</span>
                     ))}
                   </div>
                 </div>
@@ -359,8 +395,7 @@ const BentoGrid = () => {
                   <ul className="mt-3 space-y-2">
                     {activeProject.metrics.map((m) => (
                       <li key={m} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                        {m}
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />{m}
                       </li>
                     ))}
                   </ul>
@@ -371,22 +406,14 @@ const BentoGrid = () => {
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <a
-                    href={activeProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
-                  >
+                  <a href={activeProject.link} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
                     <Github size={15} />
                     View on GitHub
                   </a>
                   {activeProject.liveLink && (
-                    <a
-                      href={activeProject.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[hsl(142_70%_45%/0.4)] text-[hsl(142_70%_60%)] text-sm font-medium hover:bg-[hsl(142_70%_45%/0.1)] transition-colors"
-                    >
+                    <a href={activeProject.liveLink} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[hsl(142_70%_45%/0.4)] text-[hsl(142_70%_60%)] text-sm font-medium hover:bg-[hsl(142_70%_45%/0.1)] transition-colors">
                       Live Demo ↗
                     </a>
                   )}
