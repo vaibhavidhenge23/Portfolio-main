@@ -112,7 +112,7 @@ const projects = [
     icon: <Calculator size={20} />,
     accent: "from-[hsl(212_100%_48%/0.15)] to-[hsl(212_100%_48%/0.05)]",
     span: "md:col-span-1",
-    link: "https://github.com/vaibhavidhenge23/ITR-appp",
+    link: "https://github.com/vaibhavidhenge23/ITR-Auto-app",
     liveLink: "https://itr-app.vercel.app",
     problem: "Filing ITR in India is complex — salaried individuals and freelancers both struggle with income declarations, deduction calculations, TDS reconciliation, and understanding their final tax liability.",
     solution: "A full-stack ITR app with a live tax engine supporting ITR-1 (salaried) and ITR-4 (freelancer/business), covering income sources, 80C/80D investments, TDS records, real-time tax slab computation, and PDF-ready final reports.",
