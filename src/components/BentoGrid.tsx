@@ -224,35 +224,7 @@ const projects = [
       { label: "PostgreSQL", color: "bg-[hsl(170_70%_45%/0.2)] text-[hsl(170_70%_60%)]" },
     ],
   },
-  {
-    title: "Voting Web Application",
-    subtitle: "Node.js · Express.js · JWT Auth",
-    shortDesc: "Secure backend voting app with Aadhaar-based verification, one user–one vote enforcement, and admin live vote count.",
-    tags: ["Node.js", "Express.js", "JavaScript", "JWT"],
-    icon: <Vote size={20} />,
-    accent: "from-[hsl(212_100%_48%/0.15)] to-[hsl(212_100%_48%/0.05)]",
-    span: "md:col-span-1",
-    link: "https://github.com/vaibhavidhenge23/Voting-application",
-    liveLink: null,
-    problem: "Campus voting was manual and prone to fraud — needed a verifiable, tamper-proof digital system.",
-    solution: "Node.js/Express.js backend with Aadhaar-based identity verification, server-side vote deduplication, and admin control panel with live results.",
-    metrics: [
-      "Aadhaar-based identity verification",
-      "One user–one vote enforced server-side",
-      "Admin dashboard with live vote count",
-      "Secure JWT authentication pipeline",
-    ],
-    architecture: [
-      { label: "Voter", color: "bg-primary/20 text-primary" },
-      { label: "→", color: "text-muted-foreground" },
-      { label: "Auth Middleware", color: "bg-[hsl(142_70%_45%/0.2)] text-[hsl(142_70%_60%)]" },
-      { label: "→", color: "text-muted-foreground" },
-      { label: "Vote Controller", color: "bg-[hsl(280_80%_50%/0.2)] text-[hsl(280_80%_65%)]" },
-      { label: "→", color: "text-muted-foreground" },
-      { label: "DB (Dedupe)", color: "bg-[hsl(30_90%_55%/0.2)] text-[hsl(30_90%_60%)]" },
-    ],
-  },
-];
+  
 
 const smallCards = [
   { title: "Microservices", icon: <Layers size={16} />, desc: "Eureka discovery, API Gateway, service isolation", tags: ["Spring Cloud", "Node.js"] },
